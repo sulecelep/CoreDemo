@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sulec\\OneDrive\\Masaüstü\\CoreDemo\\DataAccessLayer\\DataAccessLayer.csproj": {}
+    "C:\\Users\\CELEP\\source\\repos\\CoreDemo\\CoreDemo\\DataAccessLayer\\DataAccessLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sulec\\OneDrive\\Masaüstü\\CoreDemo\\DataAccessLayer\\DataAccessLayer.csproj": {
+    "C:\\Users\\CELEP\\source\\repos\\CoreDemo\\CoreDemo\\DataAccessLayer\\DataAccessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sulec\\OneDrive\\Masaüstü\\CoreDemo\\DataAccessLayer\\DataAccessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\CELEP\\source\\repos\\CoreDemo\\CoreDemo\\DataAccessLayer\\DataAccessLayer.csproj",
         "projectName": "DataAccessLayer",
-        "projectPath": "C:\\Users\\sulec\\OneDrive\\Masaüstü\\CoreDemo\\DataAccessLayer\\DataAccessLayer.csproj",
-        "packagesPath": "C:\\Users\\sulec\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sulec\\OneDrive\\Masaüstü\\CoreDemo\\DataAccessLayer\\obj\\",
+        "projectPath": "C:\\Users\\CELEP\\source\\repos\\CoreDemo\\CoreDemo\\DataAccessLayer\\DataAccessLayer.csproj",
+        "packagesPath": "C:\\Users\\CELEP\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\CELEP\\source\\repos\\CoreDemo\\CoreDemo\\DataAccessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\sulec\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\CELEP\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\sulec\\OneDrive\\Masaüstü\\CoreDemo\\EntityLayer\\EntityLayer.csproj": {
-                "projectPath": "C:\\Users\\sulec\\OneDrive\\Masaüstü\\CoreDemo\\EntityLayer\\EntityLayer.csproj"
+              "C:\\Users\\CELEP\\source\\repos\\CoreDemo\\CoreDemo\\EntityLayer\\EntityLayer.csproj": {
+                "projectPath": "C:\\Users\\CELEP\\source\\repos\\CoreDemo\\CoreDemo\\EntityLayer\\EntityLayer.csproj"
               }
             }
           }
@@ -81,21 +81,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\sulec\\OneDrive\\Masaüstü\\CoreDemo\\EntityLayer\\EntityLayer.csproj": {
+    "C:\\Users\\CELEP\\source\\repos\\CoreDemo\\CoreDemo\\EntityLayer\\EntityLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sulec\\OneDrive\\Masaüstü\\CoreDemo\\EntityLayer\\EntityLayer.csproj",
+        "projectUniqueName": "C:\\Users\\CELEP\\source\\repos\\CoreDemo\\CoreDemo\\EntityLayer\\EntityLayer.csproj",
         "projectName": "EntityLayer",
-        "projectPath": "C:\\Users\\sulec\\OneDrive\\Masaüstü\\CoreDemo\\EntityLayer\\EntityLayer.csproj",
-        "packagesPath": "C:\\Users\\sulec\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sulec\\OneDrive\\Masaüstü\\CoreDemo\\EntityLayer\\obj\\",
+        "projectPath": "C:\\Users\\CELEP\\source\\repos\\CoreDemo\\CoreDemo\\EntityLayer\\EntityLayer.csproj",
+        "packagesPath": "C:\\Users\\CELEP\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\CELEP\\source\\repos\\CoreDemo\\CoreDemo\\EntityLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\sulec\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\CELEP\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -158,7 +158,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

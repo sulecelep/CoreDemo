@@ -7625,19 +7625,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sulec\\.nuget\\packages\\": {}
+    "C:\\Users\\CELEP\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sulec\\OneDrive\\Masaüstü\\CoreDemo\\CoreDemo\\CoreDemo.csproj",
+      "projectUniqueName": "C:\\Users\\CELEP\\source\\repos\\CoreDemo\\CoreDemo\\CoreDemo\\CoreDemo.csproj",
       "projectName": "CoreDemo",
-      "projectPath": "C:\\Users\\sulec\\OneDrive\\Masaüstü\\CoreDemo\\CoreDemo\\CoreDemo.csproj",
-      "packagesPath": "C:\\Users\\sulec\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sulec\\OneDrive\\Masaüstü\\CoreDemo\\CoreDemo\\obj\\",
+      "projectPath": "C:\\Users\\CELEP\\source\\repos\\CoreDemo\\CoreDemo\\CoreDemo\\CoreDemo.csproj",
+      "packagesPath": "C:\\Users\\CELEP\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\CELEP\\source\\repos\\CoreDemo\\CoreDemo\\CoreDemo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\sulec\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\CELEP\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7651,14 +7651,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\sulec\\OneDrive\\Masaüstü\\CoreDemo\\BusinessLayer\\BusinessLayer.csproj": {
-              "projectPath": "C:\\Users\\sulec\\OneDrive\\Masaüstü\\CoreDemo\\BusinessLayer\\BusinessLayer.csproj"
+            "C:\\Users\\CELEP\\source\\repos\\CoreDemo\\CoreDemo\\BusinessLayer\\BusinessLayer.csproj": {
+              "projectPath": "C:\\Users\\CELEP\\source\\repos\\CoreDemo\\CoreDemo\\BusinessLayer\\BusinessLayer.csproj"
             },
-            "C:\\Users\\sulec\\OneDrive\\Masaüstü\\CoreDemo\\DataAccessLayer\\DataAccessLayer.csproj": {
-              "projectPath": "C:\\Users\\sulec\\OneDrive\\Masaüstü\\CoreDemo\\DataAccessLayer\\DataAccessLayer.csproj"
+            "C:\\Users\\CELEP\\source\\repos\\CoreDemo\\CoreDemo\\DataAccessLayer\\DataAccessLayer.csproj": {
+              "projectPath": "C:\\Users\\CELEP\\source\\repos\\CoreDemo\\CoreDemo\\DataAccessLayer\\DataAccessLayer.csproj"
             },
-            "C:\\Users\\sulec\\OneDrive\\Masaüstü\\CoreDemo\\EntityLayer\\EntityLayer.csproj": {
-              "projectPath": "C:\\Users\\sulec\\OneDrive\\Masaüstü\\CoreDemo\\EntityLayer\\EntityLayer.csproj"
+            "C:\\Users\\CELEP\\source\\repos\\CoreDemo\\CoreDemo\\EntityLayer\\EntityLayer.csproj": {
+              "projectPath": "C:\\Users\\CELEP\\source\\repos\\CoreDemo\\CoreDemo\\EntityLayer\\EntityLayer.csproj"
             }
           }
         }
@@ -7725,7 +7725,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

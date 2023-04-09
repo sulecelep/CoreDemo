@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sulec\\OneDrive\\Masaüstü\\CoreDemo\\CoreLayer\\CoreLayer.csproj": {}
+    "C:\\Users\\CELEP\\source\\repos\\CoreDemo\\CoreDemo\\CoreLayer\\CoreLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sulec\\OneDrive\\Masaüstü\\CoreDemo\\CoreLayer\\CoreLayer.csproj": {
+    "C:\\Users\\CELEP\\source\\repos\\CoreDemo\\CoreDemo\\CoreLayer\\CoreLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sulec\\OneDrive\\Masaüstü\\CoreDemo\\CoreLayer\\CoreLayer.csproj",
+        "projectUniqueName": "C:\\Users\\CELEP\\source\\repos\\CoreDemo\\CoreDemo\\CoreLayer\\CoreLayer.csproj",
         "projectName": "CoreLayer",
-        "projectPath": "C:\\Users\\sulec\\OneDrive\\Masaüstü\\CoreDemo\\CoreLayer\\CoreLayer.csproj",
-        "packagesPath": "C:\\Users\\sulec\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sulec\\OneDrive\\Masaüstü\\CoreDemo\\CoreLayer\\obj\\",
+        "projectPath": "C:\\Users\\CELEP\\source\\repos\\CoreDemo\\CoreDemo\\CoreLayer\\CoreLayer.csproj",
+        "packagesPath": "C:\\Users\\CELEP\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\CELEP\\source\\repos\\CoreDemo\\CoreDemo\\CoreLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\sulec\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\CELEP\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
