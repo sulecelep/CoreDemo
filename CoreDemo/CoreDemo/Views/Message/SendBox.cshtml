@@ -1,0 +1,75 @@
+﻿@using EntityLayer.Concrete
+@model List<Message2>
+@{
+    ViewData["Title"] = "SendBox";
+    Layout = "~/Views/Shared/WriterLayout.cshtml";
+    int count = 0;
+
+}
+
+
+<h1>Giden Kutusu</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Konu</th>
+        <th>Alıcı</th>
+        <th>Tarih</th>
+        <th>Mesajı Aç</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td>@item.Subject</td>
+            <td>@item.ReceiverUser.WriterName</td>
+            <td>
+                @{
+
+                    DateTime now = DateTime.Now;
+                    int year = (DateTime.Now.Year - item.MessageDate.Year);
+                    TimeSpan ts = now - item.MessageDate;
+                    double days = Math.Abs(ts.Days);
+                    int hours = Math.Abs(ts.Hours);
+                    int min = Math.Abs(ts.Minutes);
+                    if (days == 0)
+                    {
+                        if (hours == 0)
+                        {
+                            @(ts.Minutes.ToString() + " dakika önce")
+                        }
+                        else
+                        {
+                            @(ts.Hours.ToString() + " saat önce")
+                        }
+                    }
+                    if (days > 0 && days < 30)
+                    {
+                        @(ts.Days.ToString() + " gün önce")
+
+                    }
+                    if (days >= 30 && year == 0)
+                    {
+
+                        var months = Math.Round(days / 30);
+
+                        @(months + " ay önce")
+                    }
+                    if (year > 0)
+                    {
+                        @(year + " yıl önce")
+                    }
+                }
+            </td>
+            <td><a href="/Message/MessageDetails/@item.MessageID" class="btn btn-warning">Mesajı Aç</a></td>
+        </tr>
+    }
+
+</table>
+<a href="/Message/SendMessage/" class="btn btn-primary">Yeni Mesaj Oluştur</a>
+
+
+
+

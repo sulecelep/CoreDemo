@@ -18,6 +18,11 @@ namespace BusinessLayer.Concrete
             _notificationDal = notificationDal;
         }
 
+        public List<Notification> GetAllStatusTrue()
+        {
+            return _notificationDal.GetListAll(x => x.NotificationStatus == true);
+        }
+
         public List<Notification> GetList()
         {
             return _notificationDal.GetListAll();

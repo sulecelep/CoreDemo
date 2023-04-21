@@ -3,6 +3,7 @@
 @{
 	ViewData["Title"] = "BlogListByWriter";
 	Layout = "~/Views/Shared/WriterLayout.cshtml";
+	int count = 0;
 }
 
 <h1>Yazarın Blogları</h1>
@@ -18,8 +19,9 @@
 	</tr>
 	@foreach (var item in Model)
 		{
-	<tr>
-			<th>@item.BlogID</th>
+		count++;
+		<tr>
+			<th>@count</th>
 			<td>@item.BlogTitle</td>
 			<td>@(((DateTime)item.CreateDate).ToString("dd-MMM-yyyy"))</td>
 			<td>@item.Category.CategoryName</td>

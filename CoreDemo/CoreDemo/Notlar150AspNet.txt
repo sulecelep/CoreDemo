@@ -1,0 +1,196 @@
+﻿64. - 67. Video Trigger Sorgusu
+
+Create Trigger PuanArttir
+On Tbl3
+After Insert
+As
+Declare @p int --Değişken oluşturduk puan için
+Declare @k int --Değişken Tbl3'teki Kategori için
+Select @p=Puan, @k=Kategori from inserted  --Burada değişkenleri Hangi Column için oluşturduğumu belirttim inserted eklenen kayıt anlamına geliyor
+Update Tbl2 Set Puan=Puan+@p where ID=@k  --Tbl2 tablosunu Puanı önceki mevcut puana ekleyerek güncelle 
+
+
+
+--Create Trigger AddBlogInRaytingTable
+--On Blogs
+--After Insert
+--As
+--Declare @ID int
+--Select @ID=BlogID from inserted
+--Insert Into BlogRaytings (BlogID,BlogTotalScore,BlogRaytingCount)
+--Values (@ID,0,0)
+
+Create Trigger AddScoreInComment
+On Comments
+After Insert
+As
+Declare @ID int
+Declare @Score int
+Declare @RaytingCount int
+Select @ID=BlogID, @Score=BlogScore from inserted
+Update BlogRaytings Set BlogTotalScore=BlogTotalScore+@Score,BlogRaytingCount +=1
+Where BlogID=@ID
+
+76. video bildirim ödevi
+Shared->Components->WriterNotification -> Default.cshtml  içerisinde
+foreach i şu şekilde yazarsak;
+@foreach (var item in Model.Where(x => x.NotificationStatus == true).OrderByDescending(x=>x.NotificationID).Take(5))
+
+Sadece status(durumu) aktif(true) olanlar, --> Where komutu ile
+en son gelen bildirim idsine göre sıralama  --> OrderByDescending ile 
+ve son 5 bildirim  olarak ayarlayabilirsiniz.  --> Take ile
+
+Youtube cevaplarda vardı, not olarak kalsın. Ben nm'da true olanları getirdim.
+
+
+80.Video Code EF First Two Foreign Key From Same Table
+
+ÖRNEK: FUTBOL FİKSTÜRÜ
+
+TAKIMLAR TABLOSU
+TakimID
+TakimAdi
+
+MAÇLAR TABLOSU
+MacID
+EvSahibiTakim <relation> TakimID
+KonukTakim  <relation> TakimID
+Tarih
+Stadyum
+
+TAKIMLAR TABLOSU
+ID TakimAdi
+1  Fenerbahçe
+2  Galatasaray
+3  Beşiktaş
+4  Trabzonspor
+
+MAÇLAR TABLOSU
+MacID EvSahibi KonukTakim Tarih    Stadyum
+1     1			2		 12.03.23	Ülker 
+2	  3			4		 11.03.23   Vodafone
+
+
+Team tablosu Entity:
+        public int TeamID { get; set; }
+        public string TeamName { get; set; }
+        public virtual ICollection<Match> HomeMatches { get; set; }
+        public virtual ICollection<Match> AwayMatches { get; set; }
+
+Burada Takım hem konuktakım hem de evsahibitakım olacağı için iki ayrı Collection tanımladık.
+
+Match tablosu Entity:
+public int MatchID { get; set; }
+        public int? HomeTeamID { get; set; }
+        public int? GuestTeamID { get; set; }
+        public string MatchDate { get; set; }
+        public string Stadium { get; set; }
+        public Team HomeTeam { get; set; }
+        public Team GuestTeam { get; set; }
+
+
+Context'te:
+        public DbSet<Team> Teams { get; set; }  
+        public DbSet<Match> Matches { get; set; } 
+
+yazdık.
+Tek tabloda iki ilişki tanımlayacağımız için ModelBuilder yapcaz.
+
+Context'te:
+protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Match>()
+                .HasOne(x => x.HomeTeam)
+                .WithMany(y => y.HomeMatches)
+                .HasForeignKey(z => z.HomeTeamID)
+                .OnDelete(DeleteBehavior.ClientSetNull);
+
+            modelBuilder.Entity<Match>()
+                .HasOne(x => x.GuestTeam)
+                .WithMany(y => y.AwayMatches)
+                .HasForeignKey(z => z.GuestTeamID)
+                .OnDelete(DeleteBehavior.ClientSetNull);
+
+            //base.OnModelCreating(modelBuilder);
+        }
+
+metodunu yazıyoruz.
+Burada Match tablosunda iki foreignkey olacağı için;
+modelBuilder.Entity<Match>()  Entity'nin içine Match'i aldık
+.HasOne(x => x.HomeTeam) Match'deki Team türündeki prop
+.WithMany(y => y.HomeMatches) Team'deki HomeMatches olarak tanımlandı
+.HasForeignKey(z => z.HomeTeamID) Match'deki HomeTeam ile Team'deki
+HomeMatches'i birbirine bağlamak için HomeTeamID foreignkey olarak kullanıldı
+.OnDelete(DeleteBehavior.ClientSetNull);
+IsRequired: ilgili alanın zorunluluğunu ifade eder. Bununla beraber IsOptional  opsiyonel olduğunu da belirtebiliriz.
+OnDelete yöntemi içinde 3 paremetre; (Silinme Durumunda)
+Cascade: Bağımlı olanlar siliniyor
+Restrict: Bağımlı olanlar etkilenmiyor
+SetNull: Değer NULL olarak değiştiriliyor.
+
+
+92. Video Pagination
+UI katmanına Nuget'ten:
+X.PagedList 8.1.0 
+X.PagedList.MVC.Core 8.1.0 indirdik.
+
+Controller'da 
+using X.PagedList;
+ekledik usinglere ve Controller'da;
+public IActionResult Index(int page=1)
+        {
+            var values=cm.GetList().ToPagedList(page,3);
+            return View(values);
+        }
+şeklnde kullandık.
+
+View'e gidip;
+
+en üste;
+@using EntityLayer.Concrete
+@using X.PagedList
+@using X.PagedList.Mvc.Core
+@model IPagedList<EntityLayer.Concrete.Category>
+
+table'ın altına
+@Html.PagedListPager((IPagedList)Model,page=>Url.Action("Index",new {page}))
+
+olarak yazdık.
+
+145. AccessDenied
+ services.ConfigureApplicationCookie(options =>
+            {
+                options.Cookie.HttpOnly = true;
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(100);
+                options.AccessDeniedPath = new PathString("/Login/AccessDenied/");
+                options.LoginPath = "/Login/Index/";
+                options.SlidingExpiration = true;
+            });
+Burada path belirterek ilgili sayfayı oluşturuyoruz.
+
+
+146. video JWT JSONWebToken
+
+Solution'dan new project deyip Web Api projesi oluşturduk.
+Buraya nugetten Microsoft.AspNetCore.Authentication.JwtBearer 5.0.9 paketini indirdik.
+
+
+Startup'da ConfigureServices'i değiştircez.
+  services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(x =>
+                {
+                    x.RequireHttpsMetadata = false;
+                    x.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidIssuer = "http://localhost",
+                        ValidAudience = "http://localhost",
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("aspnetcoreprojekampi")),
+                        ValidateIssuerSigningKey = true,
+                        ValidateLifetime = true,
+                        ClockSkew=TimeSpan.Zero,
+                    };
+                });
+
+Aşağıda:
+            app.UseAuthentication();
+Athorization'dan önce olacak.

@@ -10,7 +10,7 @@ namespace CoreDemo.ViewComponents.Writer
         NotificationManager nm = new NotificationManager(new EfNotificationRepository());
         public IViewComponentResult Invoke()
         {
-            var values = nm.GetList();
+            var values = nm.GetAllStatusTrue();
             return View(values);
         }
     }
